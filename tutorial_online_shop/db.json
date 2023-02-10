@@ -1,9 +1,46 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "products": [
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name": "T-shirt 1",
+      "price": 100,
+      "article": "T1",
+      "available": true
+    },
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name": "T-shirt 2",
+      "price": 150,
+      "article": "T2",
+      "available": true
+    },
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name":"T-shirt 3",
+      "price": 200,
+      "article": "T3",
+      "available": false
+    },
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name": "T-shirt 4",
+      "price": 250,
+      "article": "T4",
+      "available": true
+    },
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name": "T-shirt 5",
+      "price": 300,
+      "article": "T5",
+      "available": false
+    },
+    {
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "name": "T-shirt 6",
+      "price": 350,
+      "article": "T6",
+      "available": true
+    }
+  ]
 }
