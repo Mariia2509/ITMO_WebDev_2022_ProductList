@@ -1,9 +1,12 @@
 <template>
 <div class="v-catalog-item">
-  <img src="" alt=""/>
+  <img class="v-catalog-item_image" :src="require('../assets/images/' + product_data.image)" alt="img"/>
   <p class="v-catalog-item_name">{{product_data.name}}</p>
-  <p class="v-catalog-item_price">{{product_data.price}}</p>
-  <button class="v-catalog-item_add_to_card_btn btn">add to card</button>
+  <p class="v-catalog-item_price">Price:{{product_data.price}}$</p>
+  <button
+      class="v-catalog-item_add_to_card_btn btn"
+      @click="sendDataToParent">add to card
+  </button>
 </div>
   </template>
 
@@ -22,6 +25,12 @@ export default {
   data() {
     return {}
   },
+  computed:{},
+  methods:{
+    sendDataToParent(){
+      this.$emit('sendArticle', this.product_data.article)
+    }
+  },
   mounted() {
     console.log('Hello I am here')
   }
@@ -32,7 +41,10 @@ export default {
 .v-catalog-item {
   flex-basis: 25%;
   box-shadow: 0 0 8px 0; color: cadetblue;
-  padding: 16px;
-  margin: 16px;
+  padding: 24px;
+  margin: 24px;
+}
+.v-catalog-item_image{
+  width: 100px;
 }
 </style>

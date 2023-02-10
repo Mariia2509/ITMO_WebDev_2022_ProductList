@@ -2,15 +2,17 @@
   <div class="v-catalog">
     <h1>Catalog</h1>
     <v-catalog-item
-    v-for="product in products"
+    v-for="product in PRODUCTS"
     :key="product.article"
     :product_data="product"
+    @sendArticle="showDataInConsole"
     />
   </div>
 </template>
 
 <script>
 import vCatalogItem from './v-catalog-item'
+import {mapActions, mapGetters} from 'vuex'
 
 
 export default {
@@ -21,55 +23,31 @@ export default {
   props: {},
   data() {
     return {
-      products: [
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 1",
-          price: 100,
-          article: "T1",
-          available: true
-        },
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 2",
-          price: 150,
-          article: "T2",
-          available: true
-        },
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 3",
-          price: 200,
-          article: "T3",
-          available: true
-        },
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 4",
-          price: 250,
-          article: "T4",
-          available: true
-        },
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 5",
-          price: 300,
-          article: "T5",
-          available: true
-        },
-        {
-          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-          name: "T-shirt 6",
-          price: 350,
-          article: "T6",
-          available: true
-        },
-      ],
-      mounted() {
-        console.log('Hello I am here')
-      }
+
     }
-  }}
+  },
+      computed:{
+    ...mapGetters([
+        'PRODUCTS'
+    ])
+      },
+      methods:{
+        ...mapActions([
+          'GET_PRODUCTS_FROM_API'
+        ]),
+        showDataInConsole(data){
+          console.log(data)
+        }
+      },
+      mounted() {
+        this.GET_PRODUCTS_FROM_API()
+        .then((response) => {
+          if (response.data) {
+            console.log('Data arrived!')
+          }
+        })
+      }
+  }
 </script>
 
 <style scoped lang="scss">
