@@ -6,7 +6,9 @@
     <p>Price:{{cart_item_data.price}}$</p>
     <p>{{cart_item_data.article}}</p>
   </div>
-  <div class="v-cart-item_quantity"></div>
+  <div class="v-cart-item_quantity">
+    <p>Qty</p>
+    {{cart_item_data.quantity}}</div>
   <button>delete</button>
 </div>
 </template>
@@ -24,6 +26,11 @@ export default {
   },
   data(){
     return{}
+  },
+  computed:{},
+  mounted() {
+    // eslint-disable-next-line vue/no-mutating-props
+    this.cart_item_data ['quantity']= 1
   }
 }
 </script>
