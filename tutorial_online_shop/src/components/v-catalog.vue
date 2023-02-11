@@ -26,27 +26,26 @@ export default {
 
     }
   },
-      computed:{
-    ...mapGetters([
-        'PRODUCTS'
-    ])
-      },
-      methods:{
-        ...mapActions([
-          'GET_PRODUCTS_FROM_API'
-        ]),
-        showDataInConsole(data){
-          console.log(data)
-        }
-      },
-      mounted() {
-        this.GET_PRODUCTS_FROM_API()
-        .then((response) => {
-          if (response.data) {
-            console.log('Data arrived!')
-          }
-        })
+    computed:{
+      ...mapGetters([
+          'PRODUCTS'
+      ])
+    },
+    methods:{
+      ...mapActions([
+        'GET_PRODUCTS_FROM_API'
+      ]),
+      showDataInConsole(data){
+        console.log(data)
       }
+    },
+    mounted() {
+      this.GET_PRODUCTS_FROM_API().then((response) => {
+        if (response.data) {
+          console.log('Data arrived!')
+        }
+      })
+    }
   }
 </script>
 

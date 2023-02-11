@@ -17,9 +17,7 @@ export default {
   props: {
     product_data:{
       type: Object,
-      default(){
-        return{}
-      }
+      default: () => ({})
     }
   },
   data() {
