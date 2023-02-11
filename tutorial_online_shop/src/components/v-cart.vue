@@ -20,7 +20,14 @@ export default {
   components:{
     vCartItem
   },
-  props: {},
+  props: {
+    cart_data:{
+      type:Array,
+      default(){
+        return[]
+      }
+    }
+  },
   data() {
     return {}
   },

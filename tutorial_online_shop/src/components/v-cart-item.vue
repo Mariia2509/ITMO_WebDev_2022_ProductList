@@ -3,7 +3,7 @@
   <img class="v-cart-item_image" :src="require('../assets/images/' + cart_item_data.image)" alt="img"/>
   <div class="v-cart-item_info">
     <p>{{cart_item_data.name}}</p>
-    <p>{{cart_item_data.price}}</p>
+    <p>Price:{{cart_item_data.price}}$</p>
     <p>{{cart_item_data.article}}</p>
   </div>
   <div class="v-cart-item_quantity"></div>
@@ -32,9 +32,12 @@ export default {
 <style scoped lang="scss">
 .v-cart-item {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  box-shadow: 0 0 8px 0; color: cadetblue;
+  padding: 24px;
+  margin: 24px;
 }
 .v-cart-item_image {
   max-width: 50px;
