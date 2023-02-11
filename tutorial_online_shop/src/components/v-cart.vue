@@ -2,9 +2,10 @@
 <div class="v-cart">
   <h1>Cart</h1>
   <v-cart-item
-    v-for="item in cart_data"
+    v-for="(item, index) in cart_data"
     :key="item.article"
     :cart_item_data="item"
+    :deleteFromCart="deleteFromCart.index"
   />
 
 
@@ -31,9 +32,12 @@ export default {
   data() {
     return {}
   },
-  mounted() {
-    console.log('Hello I am here')
-  }
+  computed:{},
+  methods:{
+    deleteFromCart(index){
+      console.log(index)
+    }
+  },
 }
 </script>
 

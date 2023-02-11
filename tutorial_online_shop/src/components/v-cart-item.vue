@@ -7,9 +7,9 @@
     <p>{{cart_item_data.article}}</p>
   </div>
   <div class="v-cart-item_quantity">
-    <p>Qty</p>
+    <p>Q-ty:</p>
     {{cart_item_data.quantity}}</div>
-  <button>delete</button>
+  <button @click="deleteFromCart">delete</button>
 </div>
 </template>
 
@@ -27,7 +27,13 @@ export default {
   data(){
     return{}
   },
+
   computed:{},
+  methods: {
+    deleteFromCart() {
+      this.$emit('deleteFromCart')
+    }
+  },
   mounted() {
     // eslint-disable-next-line vue/no-mutating-props
     this.cart_item_data ['quantity']= 1
