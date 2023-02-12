@@ -1,6 +1,6 @@
 <template>
   <div class="v-catalog">
-    <div class="v-catalog_link_to_cart">Cart:0</div>
+    <div class="v-catalog_link_to_cart">Cart:{{CART.length}}</div>
     <h1>Catalog</h1>
     <v-catalog-item
     v-for="product in PRODUCTS"
@@ -29,7 +29,8 @@ export default {
   },
     computed:{
       ...mapGetters([
-          'PRODUCTS'
+          'PRODUCTS',
+          'CART'
       ])
     },
     methods:{
