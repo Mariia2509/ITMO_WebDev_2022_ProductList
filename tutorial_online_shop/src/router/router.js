@@ -17,8 +17,7 @@ const router = createRouter({
         {
             path:'/cart',
             name: 'cart',
-            component: vCart,
-            props: true
+            component: vCart
 
         }
     ]

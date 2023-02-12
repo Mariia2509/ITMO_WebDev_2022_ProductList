@@ -31,13 +31,15 @@ export default {
   computed:{},
   methods: {
     deleteFromCart() {
-      this.$emit('deleteFromCart')
+      this.$emit('deleteFromCart', this.cart_item_data.article)
     }
   },
+/*
   mounted() {
     // eslint-disable-next-line vue/no-mutating-props
     this.cart_item_data ['quantity']= 1
   }
+*/
 }
 </script>
 
