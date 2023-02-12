@@ -5,7 +5,7 @@
     v-for="(item, index) in cart_data"
     :key="item.article"
     :cart_item_data="item"
-    :deleteFromCart="deleteFromCart.index"
+    :deleteFromCart="deleteFromCart(index)"
   />
 
 
@@ -15,32 +15,38 @@
 <script>
 
 import vCartItem from './v-cart-item'
+// import {mapActions} from "vuex";
+
 
 export default {
   name: "v-cart",
-  components:{
+  components: {
     vCartItem
   },
   props: {
-    cart_data:{
-      type:Array,
-      default(){
-        return[]
+    cart_data: {
+      type: Array,
+      default() {
+        return []
       }
     }
   },
   data() {
     return {}
   },
-  computed:{},
-  methods:{
+  computed: {},
+  methods: {
+  //   ...mapActions([
+  //       'DELETE_FROM_CART'
+// ]),
     deleteFromCart(index){
       console.log(index)
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
+
 
 </style>
