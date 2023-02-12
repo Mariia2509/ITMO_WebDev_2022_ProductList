@@ -1,6 +1,8 @@
 <template>
   <div class="v-catalog">
-    <div class="v-catalog_link_to_cart">Cart:{{CART.length}}</div>
+    <router-link :to="{name: 'cart', params:{cart_data: CART}}">
+      <div class="v-catalog_link_to_cart">Cart:{{CART.length}}</div>
+    </router-link>
     <h1>Catalog</h1>
     <v-catalog-item
     v-for="product in PRODUCTS"
@@ -32,8 +34,7 @@ export default {
           'PRODUCTS',
           'CART'
       ])
-    },
-    methods:{
+    },methods:{
       ...mapActions([
         'GET_PRODUCTS_FROM_API',
         'ADD_TO_CART'
