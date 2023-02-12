@@ -1,5 +1,6 @@
 <template>
   <div class="v-catalog">
+    <div class="v-catalog_link_to_cart">Cart:0</div>
     <h1>Catalog</h1>
     <v-catalog-item
     v-for="product in PRODUCTS"
@@ -57,6 +58,14 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &_link_to_cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 16px;
+    border: solid gray;
   }
 }
 </style>
