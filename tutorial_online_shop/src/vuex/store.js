@@ -20,8 +20,9 @@ const store = createStore({
                     if (item.article === product.article)
                         isProductExists = true;
                     item.quantity++
+
                 })
-                if(isProductExists) {
+                if(!isProductExists) {
                     state.cart.push(product)
                 }
             } else {
