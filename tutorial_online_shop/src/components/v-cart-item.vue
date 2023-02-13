@@ -41,7 +41,7 @@ export default {
       this.$emit('increase')
     },
     deleteFromCart() {
-      this.$emit('deleteFromCart')
+      this.$emit('deleteFromCart', this.cart_item_data.article)
     }
   },
   mounted() {

@@ -68,22 +68,6 @@ const store = createStore({
           quantity: 1
         })
       }
-/*
-      if (state.cart.length) {
-        let isProductExists = false
-        state.cart.map(function (item) {
-          if (item.article === product.article)
-            isProductExists = true
-          item.quantity++
-
-        })
-        if (!isProductExists) {
-          state.cart.push(product)
-        }
-      } else {
-        state.cart.push(product)
-      }
-*/
     },
     INCREASE_CART_ITEM: (state, index) => {
       state.cart[index].quantity++

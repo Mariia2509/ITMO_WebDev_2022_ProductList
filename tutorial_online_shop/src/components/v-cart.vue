@@ -9,7 +9,7 @@
     v-for="(item, index) in CART"
     :key="item.article"
     :cart_item_data="item"
-    @deleteFromCart="deleteFromCart(index)"
+    @deleteFromCart="deleteFromCart"
     @increase="increase(index)"
     @decrease="decrease(index)"
   />
@@ -54,18 +54,6 @@ export default {
       }
       return result
     }
-  //   cartTotalCost(){
-  //     let result = []
-  //
-  //     for (let item of this.cart_data) {
-  //       result.push (item.price * item.quantity);
-  //     }
-  //       result = result.reduce(function (sum, el) {
-  //       return result = sum + el
-  //     })
-  //
-  //     return result;
-  //   }
   },
   methods: {
     ...mapActions([

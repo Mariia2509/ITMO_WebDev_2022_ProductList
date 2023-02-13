@@ -73,19 +73,5 @@ export default {
     padding: 16px;
     border: solid gray;
   }
-  //.v-catalog-item {
-  //  box-shadow: 0 0 8px 0;
-  //  color: cadetblue;
-  //  padding: 24px;
-  //  width: 260px;
-  //  box-sizing: border-box;
-  //  display: flex;
-  //  flex-direction: column;
-  //  align-items: center;
-  //}
-  //.v-catalog-item_image{
-  //  width: 100px;
-  //  margin: 0 auto;
-  //}
 }
 </style>

@@ -37,7 +37,6 @@ export default {
 
 <style scoped lang="scss">
 .v-catalog-item {
-  //flex-basis: 25%;
   box-shadow: 0 0 8px 0;
   color: cadetblue;
   padding: 24px;
@@ -49,6 +48,6 @@ export default {
 }
 .v-catalog-item_image{
   width: 100px;
-  margin: 0 auto;
+  margin: auto 0;
 }
 </style>
