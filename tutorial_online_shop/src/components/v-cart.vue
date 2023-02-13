@@ -9,7 +9,7 @@
     v-for="item in CART"
     :key="item.article"
     :cart_item_data="item"
-    @deleteFromCart="deleteFromCart"
+    :deleteFromCart="deleteFromCart"
   />
 <div class="v-cart_total">
   <p class="total_name">Total: </p>

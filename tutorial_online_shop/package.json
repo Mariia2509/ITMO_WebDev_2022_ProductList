@@ -39,6 +39,7 @@
     },
     "rules": {
       "no-console": "off"
+
     }
   },
   "browserslist": [
