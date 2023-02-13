@@ -4,12 +4,14 @@
       <div class="v-catalog_link_to_cart">Cart:{{CART.length}}</div>
     </router-link>
     <h1>Catalog</h1>
+    <div class="v-catalog_list">
     <v-catalog-item
     v-for="product in PRODUCTS"
     :key="product.article"
     :product_data="product"
     @addToCart="addToCart"
     />
+    </div>
   </div>
 </template>
 
@@ -62,9 +64,8 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    gap: 30px;
   }
-
   &_link_to_cart {
     position: absolute;
     top: 10px;
@@ -72,5 +73,19 @@ export default {
     padding: 16px;
     border: solid gray;
   }
+  //.v-catalog-item {
+  //  box-shadow: 0 0 8px 0;
+  //  color: cadetblue;
+  //  padding: 24px;
+  //  width: 260px;
+  //  box-sizing: border-box;
+  //  display: flex;
+  //  flex-direction: column;
+  //  align-items: center;
+  //}
+  //.v-catalog-item_image{
+  //  width: 100px;
+  //  margin: 0 auto;
+  //}
 }
 </style>

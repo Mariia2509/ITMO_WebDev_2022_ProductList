@@ -9,7 +9,7 @@
     v-for="(item, index) in CART"
     :key="item.article"
     :cart_item_data="item"
-    @deleteFromCart="deleteFromCart"
+    @deleteFromCart="deleteFromCart(index)"
     @increase="increase(index)"
     @decrease="decrease(index)"
   />
@@ -73,8 +73,8 @@ export default {
         'INCREASE_CART_ITEM',
         'DECREASE_CART_ITEM'
     ]),
-    deleteFromCart(article){
-      this.DELETE_FROM_CART(article)
+    deleteFromCart(index){
+      this.DELETE_FROM_CART(index)
     },
     increase (index){
       this.INCREASE_CART_ITEM(index)

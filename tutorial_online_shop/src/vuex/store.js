@@ -85,19 +85,19 @@ const store = createStore({
       }
 */
     },
-    INCREASE: (state, index) => {
+    INCREASE_CART_ITEM: (state, index) => {
       state.cart[index].quantity++
     },
 
-    DECREASE: (state, index) => {
-      if (state.cart[index] >1){
+    DECREASE_CART_ITEM: (state, index) => {
+      if (state.cart[index].quantity >1){
         state.cart[index].quantity--
       }
 
     },
 
 
-    REMOVE_FROM_CART:(state, index) => {
+    DELETE_FROM_CART:(state, index) => {
       state.cart = state.cart.filter(item => item.article !== index)
     }
   },
@@ -122,7 +122,7 @@ const store = createStore({
       commit('SET_CART', product)
     },
     DELETE_FROM_CART({commit}, index) {
-      commit('REMOVE_FROM_CART', index)
+      commit('DELETE_FROM_CART', index)
     },
     INCREASE_CART_ITEM({commit}, index){
       commit('INCREASE_CART_ITEM', index)
