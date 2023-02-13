@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-// import axios from 'axios'
+import axios from 'axios'
 
 const fakeProducts = [
   {
@@ -85,6 +85,18 @@ const store = createStore({
       }
 */
     },
+    INCREASE: (state, index) => {
+      state.cart[index].quantity++
+    },
+
+    DECREASE: (state, index) => {
+      if (state.cart[index] >1){
+        state.cart[index].quantity--
+      }
+
+    },
+
+
     REMOVE_FROM_CART:(state, index) => {
       state.cart = state.cart.filter(item => item.article !== index)
     }
@@ -92,7 +104,7 @@ const store = createStore({
   actions: {
     GET_PRODUCTS_FROM_API({ commit }) {
       commit('SET_PRODUCTS_TO_STATE', fakeProducts)
-/*
+// /*
       return axios('http://localhost:3000/products', {
         method: 'GET'
       })
@@ -104,13 +116,20 @@ const store = createStore({
             console.log(error)
             return error
           })
-*/
+
     },
     ADD_TO_CART({ commit }, product) {
       commit('SET_CART', product)
     },
     DELETE_FROM_CART({commit}, index) {
       commit('REMOVE_FROM_CART', index)
+    },
+    INCREASE_CART_ITEM({commit}, index){
+      commit('INCREASE_CART_ITEM', index)
+    },
+
+    DECREASE_CART_ITEM({commit}, index){
+      commit('DECREASE_CART_ITEM', index)
     }
   },
 

@@ -6,10 +6,12 @@
   <h1>Cart</h1>
   <p v-if="!CART.length">There is no products in your cart....</p>
   <v-cart-item
-    v-for="item in CART"
+    v-for="(item, index) in CART"
     :key="item.article"
     :cart_item_data="item"
-    :deleteFromCart="deleteFromCart"
+    @deleteFromCart="deleteFromCart"
+    @increase="increase(index)"
+    @decrease="decrease(index)"
   />
 <div class="v-cart_total">
   <p class="total_name">Total: </p>
@@ -66,10 +68,22 @@ export default {
   //   }
   },
   methods: {
-    ...mapActions(['DELETE_FROM_CART']),
+    ...mapActions([
+        'DELETE_FROM_CART',
+        'INCREASE_CART_ITEM',
+        'DECREASE_CART_ITEM'
+    ]),
     deleteFromCart(article){
       this.DELETE_FROM_CART(article)
+    },
+    increase (index){
+      this.INCREASE_CART_ITEM(index)
+    },
+
+    decrease (index){
+      this.DECREASE_CART_ITEM(index)
     }
+
   }
 }
 </script>
