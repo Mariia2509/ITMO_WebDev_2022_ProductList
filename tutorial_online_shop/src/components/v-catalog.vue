@@ -3,6 +3,9 @@
     <router-link :to="{name: 'cart', params:{cart_data: CART}}">
       <div class="v-catalog_link_to_cart">Cart:{{CART.length}}</div>
     </router-link>
+    <router-link :to="{name: 'item', params: {product_data: PRODUCTS}}">
+      <div class="v-catalog_link_to_item"></div>
+    </router-link>
     <h1>Catalog</h1>
     <div class="v-catalog_list">
     <v-catalog-item
@@ -17,13 +20,15 @@
 
 <script>
 import vCatalogItem from './v-catalog-item'
+import vItem from './v-item'
 import {mapActions, mapGetters} from 'vuex'
 
 
 export default {
   name: "v-catalog",
   components: {
-    vCatalogItem
+    vCatalogItem,
+    vItem
   },
   props: {},
   data() {
