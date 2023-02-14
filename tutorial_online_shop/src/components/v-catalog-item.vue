@@ -2,7 +2,7 @@
 
 <div class="v-catalog-item">
 
-  <router-link :to="{name: 'item', params: {product_data: PRODUCTS}}">
+  <router-link :to="`item/${index}`">
     <img class="v-catalog-item_image" :src="require('../assets/images/' + product_data.image)" alt="img"/>
   </router-link>
 
@@ -20,6 +20,10 @@
 export default {
   name: "v-catalog-item",
   props: {
+    index: {
+      type: Number,
+      require: true
+    },
     product_data:{
       type: Object,
       default: () => ({})
