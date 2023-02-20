@@ -50,4 +50,7 @@ export default {
   width: 100px;
   margin: auto 0;
 }
+.v-catalog-item_add_to_card_btn {
+  cursor: pointer;
+}
 </style>
