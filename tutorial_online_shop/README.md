@@ -16,7 +16,7 @@ npm run serve
 
 
 ```
-3._Также необходимо запустить json-server  из папки проекта (tutorial_online_shop)
+3._Также необходимо запустить json-server из папки проекта (tutorial_online_shop)
 с помощью команды:_
 
 json-server ./db.json
