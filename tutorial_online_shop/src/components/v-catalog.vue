@@ -14,7 +14,7 @@
     :product_data="product"
     :index="index"
     @addToCart="addToCart"
-    />
+    />tutorial_online_shop/src/components/v-item.vue
     </div>
   </div>
 </template>
